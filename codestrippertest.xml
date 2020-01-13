@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	$Id: codestrippertest.xml 19 2013-11-19 10:45:26Z 879417 $
+	@author Pieter van den Hombergh, Ferd van Odenhoven
+	Fontys Technische Hogeschool Venlo
+	
+	Generic build.xml for java projects.
+	Can be used with a build.properties file
+	that can (re)define all properties but most likely
+	appmain and appname. See customisation.
+	
+	Used conventions: Application classes and packages 
+	are stored under .../src.
+	Compilation output is directed to .../classes
+	Test classes are in a tree under .../test with the 
+	same package/dir struct as under .../src
+	The testpackages are compiled into the testclasses directory.
+	
+-->
+<project name="genericbuild" default="strip" basedir=".">
+	<!-- most, if not all properties can be set in build.properties 
+	Must read them before any override. -->
+	<!--property file="exambuild.properties"/-->
+	<taskdef name="codestripper" classname="org.fontysvenlo.codestripper.CodeStripper" classpath="./dist/codestripper.jar"/>
+	<target name="strip">
+		<codestripper todir="oet" 
+			dir="src" 
+			deletelines="true"
+			includes="**/*.java"
+			dryRun="false"
+			stripcode="true"
+			verbose="true"
+			excludes="**/Parents.java"
+                        startTag="\s*//Start Solution.*?,\s*//!S"
+                        endTag="\s*//End Solution.*?,\s*//!s"
+                        inverse="false"
+                        transformtags="true"
+			/>
+	</target>
+		
+</project>

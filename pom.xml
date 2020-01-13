@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>nl.fontys.sebivenlo</groupId>
+        <artifactId>sebipom</artifactId>
+        <version>1.4.6</version>
+    </parent>
+    <groupId>org.fontysvenlo</groupId>
+    <artifactId>codestripper</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <name>codestripper</name>
+    <description>Delete code by using tags</description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <exec.mainClass>org.fontysvenlo.org.Codestripper</exec.mainClass>
+    </properties>
+    <build>
+      <finalName>codestripper</finalName>
+      </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.10.6</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+</project>
