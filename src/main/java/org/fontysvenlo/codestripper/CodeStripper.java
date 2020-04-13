@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2012 Fontys Hogeschool voor Techniek en Logistiek.
+ * Copyright 2006-2020 Fontys Hogeschool voor Techniek en Logistiek.
  * Version $Id: CodeStripper.java 27 2018-05-23 06:23:32Z 879417 $
  */
 package org.fontysvenlo.codestripper;
@@ -64,8 +64,8 @@ import org.apache.tools.ant.taskdefs.MatchingTask;
  * endtag[0] and so on.
  *
  * <p/>
- * @author Pieter van den Hombergh
- * @author Ferd van Odenhoven
+ * @author Pieter van den Hombergh {@code p.vandenhombergh@fontys.nl}
+ * @author Ferd van Odenhoven      {@code f.vanodenhoven@fontys.nl}
  * @version $Revision: 27 $
  */
 public class CodeStripper extends MatchingTask {
@@ -624,8 +624,4 @@ public class CodeStripper extends MatchingTask {
         return this.inverse;
     }
     //!s
-
-    private static String joinString( String[] parts, String glue ) {
-        return String.join( glue, parts );
-    }
 }
