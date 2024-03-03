@@ -501,9 +501,25 @@ sed -i 's#//Start Solution::replaceWith::#//cs:remove:start:#' file.java
 *For simple tags*
 
 The tag `//Start Solution` should be replaces with `//cs:remove:start`
-The tag `//End Solution` should be replaces with `//cs:remove:end`
+The tag `//End Solution` should be replaced with `//cs:remove:end`
 
-the sed formula for this is 
+
 ```sh
-sed -i 's#//Start Solution#//cs:remove:start#' file.java
+for i in $(grep -rl 'Solution' .) ;
+  do sed -i -f  migrate.sed  $i; 
+done
 ```
+
+where the script file is 
+
+migrate.sed
+```sed
+s#//Start Solution::replacewith::#//cs:remove:start:#
+s#//End Solution::replacewith::#//cs:remove:end:#
+s#//Start Solution#//cs:remove:start#
+s#//End Solution#//cs:remove:end#
+```
+
+Note that the payload-full versions are adapted first.
+
+**No guarantee for this migration. Make sure you have a up to date backup of the file (version control)**
