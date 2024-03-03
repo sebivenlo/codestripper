@@ -1,3 +1,5 @@
+# This repos has been archived. Please visit [https://github.com/sebivenlo/codestripper2](codestripper2).
+
 # CodeStripper maven plugin
 
 **Modern code stripper as maven plugin.**
