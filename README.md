@@ -490,8 +490,8 @@ I would use sed to operate in the files.
 
 *For tags that have a payload:*
 
-The tag `//Start Solution::replaceWith::sometext` should be replaces with `//cs:remove:start:sometext`
-The tag `//End Solution::replaceWith::sometext` should be replaces with `//cs:remove:end:sometext`
+The tag `//Start Solution::replaceWith::sometext` should be replaced with `//cs:remove:start:sometext`
+The tag `//End Solution::replaceWith::sometext` should be replaced with `//cs:remove:end:sometext`
 
 the sed formula for this is 
 ```sh
