@@ -485,4 +485,25 @@ n. makes it possible to include a file of strings to replace the tagged line.
 For all the files that contain tags, replace the tags with
 this codestripper variant.
 
-// TODO write migration recipe.
+/
+I would use sed to operate in the files.
+
+*For tags that have a payload:*
+
+The tag `//Start Solution::replaceWith::sometext` should be replaces with `//cs:remove:start:sometext`
+The tag `//End Solution::replaceWith::sometext` should be replaces with `//cs:remove:end:sometext`
+
+the sed formula for this is 
+```sh
+sed -i 's#//Start Solution::replaceWith::#//cs:remove:start:#' file.java
+```
+
+*For simple tags*
+
+The tag `//Start Solution` should be replaces with `//cs:remove:start`
+The tag `//End Solution` should be replaces with `//cs:remove:end`
+
+the sed formula for this is 
+```sh
+sed -i 's#//Start Solution#//cs:remove:start#' file.java
+```
