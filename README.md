@@ -13,6 +13,17 @@ And if you are in real hurry
 
 In the future we may deploy this as a plugin to some repository.
 
+### Legacy ant based codestripper
+
+If you need the legacy version, move to the legacy folder and build there.
+There should be no reason to use the legacy version, because this plugin provides
+all the features of the legacy version, apart from the tag syntax.
+
+All you need to do is replace `//Start Solution::...` with `//cs:remove:start`.
+
+For other details, see below.
+
+
 ## Introduction
 
 New version of the CodeStripper that was previously used, which can be found at [https://github.com/sebivenlo/codestripper](https://github.com/sebivenlo/codestripper).
@@ -469,45 +480,9 @@ We chose to make the return type to be a `Stream<String>` to be able to be to re
 n. makes it possible to include a file of strings to replace the tagged line.
 
 
-// TODO , add plugin feature
+## Migrating from legacy codestripper
 
+For all the files that contain tags, replace the tags with
+this codestripper variant.
 
-It is possible to add custom tags. 
-
-![Class diagram](images/lineprocessor-classdiagram.svg)
-
-To add a new tag, implement a class that returns a map of String to Proccessors.
- Implement it as a `ServiceProvider` interface and put it on the class-path.
-see [Service Loading](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
-
-```Java
-public interface streamprocessor.TagProvider {
-    
-    /**
-     * A plugin should provide a map of instruction names and functions
-     * that implement that instruction implementation.
-     * 
-     * The functions should convert the Processor to a Stream of string.
-     * @return the map
-     */
-  Map<String,Function<Processor,Stream<String>>> newTags();
-}
-```
-
-```Java
-public class Hello implements TagProvider {
-
-    // puts hello in front of the lines.
-    private final Function<Processor, Stream<String>> hello
-            = p -> Stream.of( "//Hello " + p.line().split( "//cs:" )[ 0 ] );
-
-    private final Map<String, Function<Processor, Stream<String>>> transforms = Map
-            .ofEntries( entry( "hello", hello ) );
-
-    @Override
-    public Map<String, Function<Processor, Stream<String>>> newTags() {
-        return transforms;
-    }
-}
-```
-These will be added to the current set of processors.
+// TODO write migration recipe.
