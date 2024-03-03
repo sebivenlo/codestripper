@@ -2,15 +2,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>nl.fontys.sebivenlo</groupId>
-        <artifactId>sebipom</artifactId>
-        <version>1.4.6</version>
+        <groupId>io.github.sebivenlo</groupId>
+        <artifactId>informaticspom</artifactId>
+        <version>1.3</version>
     </parent>
     <groupId>org.fontysvenlo</groupId>
     <artifactId>codestripper</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <name>codestripper</name>
+    <name>codestripper-legacy</name>
     <description>Delete code by using tags</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

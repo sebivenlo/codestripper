@@ -13,19 +13,19 @@ import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
-
 import org.apache.tools.ant.DirectoryScanner;
 import org.apache.tools.ant.taskdefs.MatchingTask;
 
 /**
  * CodeStripper acts as a filter and removes code between start and end tag.
- * <p/>
+ *
+ * <p>
  * CodeStripper is an ant task and extends the ant...MatchingTask, which allows
  * selection of files to work on by means of the file matching pattern similar
  * as those available in the copy and zip ant-tasks such as "**&#47;*.java". The
  * purpose is to stripCode files from text (code) between start and end tags.
  * Its initial use is to remove solutions from exam files.
- * <p/>
+ *
  * The following properties are available: <table border='1'
  * style='border-collapse:collapse'> <tr><th>property</th><th
  * width='60%;valign:top'>Description</th><th>default
@@ -44,14 +44,14 @@ import org.apache.tools.ant.taskdefs.MatchingTask;
  * strips when true</td><td>true</td><td>no</td></tr>
  * <tr><td>replaceTag</td><td>This allows means to replace the start and end
  * lines with some other text, typically with <code>//TODO</code> for start and
- * <code>return 0;</code> for end. <br/>Any leading white space (indentation) is
+ * <code>return 0;</code> for end. <br>Any leading white space (indentation) is
  * preserved.</td> <td><code>::replacewith::</code></td><td>no</td></tr>
  * <tr><td>verbose</td><td>Generate some output to stderr on files and start and
  * end tags found</td> <td>true</td><td>no</td></tr>
  * <tr><td>invert</td><td>Inverts operation, i.e. strips all that is OUTSIDE the
  * tags.</td><td>false</td><td>no</td></tr>
  * <tr><td>transformtags</td><td>Apply tag replacement on the start and end tags
- * as indicated above.<br/>If transfromtags is false, the tags are copied
+ * as indicated above.<br>If transfromtags is false, the tags are copied
  * verbatim to the output.</td><td>true</td><td>no</td></tr>
  *
  * </table>
@@ -63,7 +63,7 @@ import org.apache.tools.ant.taskdefs.MatchingTask;
  * definition in the starttag and endtag definition, i.e. starttag[0] pairs with
  * endtag[0] and so on.
  *
- * <p/>
+ * <p>
  * @author Pieter van den Hombergh {@code p.vandenhombergh@fontys.nl}
  * @author Ferd van Odenhoven      {@code f.vanodenhoven@fontys.nl}
  * @version $Revision: 27 $
